@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showList();
+
         makeApicall();
 
 
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String BASE_URL = "https://api.coinlore.net/";
 
-
-    private void showList() {
+    private void showList(List<Crypto> cryptoList)  {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -49,16 +47,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        List<String> input = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            input.add("Test" + i);
-        }
-
         // define an adapter
-        mAdapter = new ListAdapter(input);
+        mAdapter = new ListAdapter(cryptoList);
         recyclerView.setAdapter(mAdapter);
     }
-
 
     private void makeApicall() {
 
@@ -80,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<RestAPIRep> call, Response<RestAPIRep> response) {
                 if (response.isSuccessful() && response.body() != null){
                     List<Crypto> CryptoList = response.body().getData();
-                    Toast.makeText(getApplicationContext(),"API Success", Toast.LENGTH_SHORT).show();
+                    showList(CryptoList);
                 } else{
                     showError();
                 }
