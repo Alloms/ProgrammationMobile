@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Crypto> getDataFromCache() {
-        String jsonCrypto = sharedPreferences.getString("jsonCryptoList",null);
+        String jsonCrypto = sharedPreferences.getString(Constants.KEY_CRYPTO_LIST,null);
 
         if(jsonCrypto == null){
             return null;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         String jsonString = gson.toJson(CryptoList);
         sharedPreferences
                 .edit()
-                .putString("jsonCryptoList", jsonString)
+                .putString(Constants.KEY_CRYPTO_LIST, jsonString)
                 .apply();
 
         Toast.makeText(getApplicationContext(), "List saved", Toast.LENGTH_SHORT).show();
