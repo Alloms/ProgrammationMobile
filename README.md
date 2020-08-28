@@ -1,16 +1,16 @@
 # Présentation
 
-Ce projet consiste à afficher la liste des 100 cryptomonnaies les plus importantes du marché actuel.
-On y retouve donc differentes informations dans la liste en prévisualisation comme :
+-Ce projet consiste à afficher la liste des 100 cryptomonnaies les plus importantes du marché actuel.
+-On y retouve donc differentes informations dans la liste en prévisualisation comme :
                                        -son Rang d'importance
                                        -son nom complet
                                        -son prix en USD ($)
                                        -son nom sur le marché
-Ensuite, en cliquant sur un élément de la liste on y retrouve les mêmes informations et plus comme:
+-Ensuite, en cliquant sur un élément de la liste on y retrouve les mêmes informations et plus comme:
                                        -son marketcap
                                        -son prix en btc (bitcoin)
                                        -son taux de variation d'échange sur 1h,24h et 7j
-Une amélioration sera faite avec l'intégration du logo de chaque cryptomonnaies afin de mieux les reconnaître. Ainsi que l'integration d'un graphique pour 
+-Une amélioration sera faite avec l'intégration du logo de chaque cryptomonnaies afin de mieux les reconnaître. Ainsi que l'integration d'un graphique pour 
 les taux de variations.
 
 # Prérequis
