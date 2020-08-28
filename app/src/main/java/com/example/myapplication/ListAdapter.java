@@ -62,8 +62,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
         final Crypto currentCrypto = values.get(position);
-        holder.txtHeader.setText(currentCrypto.getName() + " " +currentCrypto.getSymbol() );
-        holder.txtFooter.setText(currentCrypto.getPrice_usd()+"$ , Rank : " + currentCrypto.getRank());
+        holder.txtHeader.setText(currentCrypto.getRank() + "   " +currentCrypto.getName() );
+        holder.txtFooter.setText(currentCrypto.getPrice_usd()+"$  " + currentCrypto.getSymbol());
 
     }
 
