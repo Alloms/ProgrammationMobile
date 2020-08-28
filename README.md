@@ -39,7 +39,7 @@ les taux de variations d'échange.
 
 -L'application possède également une fonction de Memory Cache.
 
-#Icone de l'application
+# Icône de l'application
 
 Cette application s'appelle CryptoMarket
 
