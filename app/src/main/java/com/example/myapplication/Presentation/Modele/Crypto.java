@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Presentation.Modele;
 
 import java.util.List;
 

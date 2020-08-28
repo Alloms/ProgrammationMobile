@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Presentation.Vue;
 
 
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Presentation.Modele.Crypto;
+import com.example.myapplication.R;
+import com.example.myapplication.Singletons;
 
 
 public class SecondActivity extends AppCompatActivity {

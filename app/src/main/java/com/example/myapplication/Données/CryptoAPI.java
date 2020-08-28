@@ -1,4 +1,6 @@
-package com.example.myapplication;
+package com.example.myapplication.Données;
+
+import com.example.myapplication.Presentation.Modele.RestAPIRep;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

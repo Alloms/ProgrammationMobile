@@ -1,10 +1,14 @@
-package com.example.myapplication;
+package com.example.myapplication.Presentation.Controller;
 
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
 
-
+import com.example.myapplication.Constants;
+import com.example.myapplication.Presentation.Modele.Crypto;
+import com.example.myapplication.Données.CryptoAPI;
+import com.example.myapplication.Presentation.Vue.MainActivity;
+import com.example.myapplication.Presentation.Modele.RestAPIRep;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -81,14 +85,14 @@ public class MainController {
     }
 
 
-    private ArrayList<Crypto> getDataFromCache() {
-        String jsonMatch = sharedPreferences.getString(Constants.KEY_CRYPTO_LIST, null);
+    private List<Crypto> getDataFromCache() {
+        String cryptoJson = sharedPreferences.getString(Constants.KEY_CRYPTO_LIST, null);
 
-        if(jsonMatch == null) {
+        if(cryptoJson == null) {
             return null;
         } else {
             Type listType = new TypeToken<ArrayList<Crypto>>(){}.getType();
-            return gson.fromJson(jsonMatch, listType);
+            return gson.fromJson(cryptoJson, listType);
         }
 
     }

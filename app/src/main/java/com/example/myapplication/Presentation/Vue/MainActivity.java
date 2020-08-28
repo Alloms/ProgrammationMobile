@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Presentation.Vue;
 
 
 import android.app.Activity;
@@ -9,6 +9,11 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.Presentation.Controller.MainController;
+import com.example.myapplication.Presentation.Modele.Crypto;
+import com.example.myapplication.R;
+import com.example.myapplication.Singletons;
 
 import java.util.List;
 
@@ -59,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void navigateToDetails(Crypto crypto) {
         Intent myIntent = new Intent(MainActivity.this, Activity.class);
-        myIntent.putExtra("cryptoKey", Singletons.getGson().toJson(Crypto.class));
+        myIntent.putExtra("cryptoKey", Singletons.getGson().toJson(crypto));
         MainActivity.this.startActivity(myIntent);
     }
 }

@@ -1,7 +1,5 @@
-package com.example.myapplication;
+package com.example.myapplication.Presentation.Vue;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +7,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.myapplication.Presentation.Modele.Crypto;
+import com.example.myapplication.R;
+
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
@@ -71,6 +71,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         final Crypto currentCrypto = values.get(position);
         holder.txtHeader.setText(currentCrypto.getRank() + "   " +currentCrypto.getName() );
         holder.txtFooter.setText(currentCrypto.getPrice_usd()+"$  " + currentCrypto.getSymbol());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 listener.onItemClick(currentCrypto);

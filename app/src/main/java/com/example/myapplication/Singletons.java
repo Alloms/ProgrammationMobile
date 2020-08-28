@@ -3,6 +3,8 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.myapplication.Données.CryptoAPI;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
