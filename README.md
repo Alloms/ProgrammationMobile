@@ -47,4 +47,7 @@ L'application possède une icône à l'image du Bitcoin qui est la cryptomonnaie
 
 ![alt text](https://github.com/Alloms/ProgrammationMobile/blob/master/README/Appli.png)
 
-  
+
+# Auteur
+
+Créateur de l'application @Alloms
