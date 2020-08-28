@@ -49,4 +49,4 @@ L'application possède une icône à l'image du Bitcoin qui est la cryptomonnaie
 
 # Auteur
 
-Quintero Alloms [@Alloms](https://github.com/Alloms)
+Quintero [@Alloms](https://github.com/Alloms)
