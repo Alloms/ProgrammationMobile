@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,12 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<Crypto> values;
+    private OnItemClickListener listener;
 
+
+    public interface OnItemClickListener {
+        void onItemClick(Crypto item);
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -39,8 +46,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
 
-    public ListAdapter(List<Crypto> myDataset) {
-
+    public ListAdapter(List<Crypto> myDataset, OnItemClickListener onItemClickListener) {
+        this.listener = listener;
         values = myDataset;
     }
 
@@ -64,8 +71,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         final Crypto currentCrypto = values.get(position);
         holder.txtHeader.setText(currentCrypto.getRank() + "   " +currentCrypto.getName() );
         holder.txtFooter.setText(currentCrypto.getPrice_usd()+"$  " + currentCrypto.getSymbol());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                listener.onItemClick(currentCrypto);
+            }
+        });
+        }
 
-    }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
