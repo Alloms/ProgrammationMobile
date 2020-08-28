@@ -1,7 +1,11 @@
 # Présentation
 
-Ce projet consiste à afficher la liste des 100 cryptomonnaies les plus importantes du marché actuel.
+Dans le cadre du module de Programmation Mobile, vous trouverez dans ce repository un exemple d'application codé en Java sous Android Studio.
+
+Le but de cette application consiste à afficher la liste des 100 cryptomonnaies les plus importantes du marché actuel.
 Je me suis servis ce cette API https://api.coinlore.net/api/tickers/?start=0&limit=99 que j'ai personnalisé à 100 car il existe des milliers et des milliers de cryptomonnaies.
+
+L'ensemble des données sont affichés dans un RecyclerView faisant appel à un RestApi (ou Appel Serveur), permettant de display les données de chaque Cryptomonnaies.
 
 On y retouve donc differentes informations dans la liste en prévisualisation comme :
 
@@ -27,15 +31,20 @@ les taux de variations d'échange.
 
 - Installation Android Studio
 
-# Consignes respectées
+# Descriptions de l'application
 
-- Modèle MVC
-- Singletons
-- Ecrans : 2 activités, 2 fragments
-- Affichage d'une liste dans un RecyclerView
-- Affiche du détail d'un item de la liste
-- Gitflow
-- Stockage de donnée en cache
-- Appel API Rest
+-L'application a été developpé sous une Architecture dite MVC (Model View Controller).
+
+-L'application possède 2 écrans (Classement Top 100 des Cryptomonnaies et leurs informations).
+
+-L'application possède également une fonction de Memory Cache.
+
+#Icone de l'application
+
+Cette application s'appelle CryptoMarket
+
+L'application possède une icône à l'image du Bitcoin qui est la cryptomonnaie la plus connue du marché : 
+
+![alt text](https://github.com/Alloms/ProgrammationMobile/blob/master/README/Appli.png)
 
   
