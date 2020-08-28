@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void showList(List<Crypto> cryptoList)  {
+    public void showList(List<Crypto> cryptoList)  {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -49,17 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         // define an adapter
-        mAdapter = new ListAdapter(cryptoList, new ListAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Crypto item) {
-                controller.onItemClick(item);
-            }
-        });
+        mAdapter = new ListAdapter(cryptoList);
+
         recyclerView.setAdapter(mAdapter);
     }
 
 
-    void showError() {
+    public void showError() {
         Toast.makeText(getApplicationContext(), "API Error", Toast.LENGTH_SHORT).show();
     }
     public void navigateToDetails(Crypto crypto) {

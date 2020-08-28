@@ -1,8 +1,11 @@
 package com.example.myapplication.Presentation.Vue;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +18,10 @@ import java.util.List;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<Crypto> values;
     private OnItemClickListener listener;
+
+    public ListAdapter(List<Crypto> cryptoList) {
+        this.values = cryptoList;
+    }
 
 
     public interface OnItemClickListener {
@@ -46,12 +53,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
 
-    public ListAdapter(List<Crypto> myDataset, OnItemClickListener onItemClickListener) {
-        this.listener = listener;
-        values = myDataset;
-    }
-
-
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -74,7 +75,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                listener.onItemClick(currentCrypto);
+                Context context = v.getContext();
+                Intent intent = new Intent(context,SecondActivity.class);
+                intent.putExtra("Name",currentCrypto.getName());
+                intent.putExtra("Rank",currentCrypto.getRank());
+                intent.putExtra("symb",currentCrypto.getSymbol());
+                intent.putExtra("usd",currentCrypto.getPrice_usd());
+                intent.putExtra("btc",currentCrypto.getPrice_btc());
+                intent.putExtra("pc1",currentCrypto.getPercent_change_1h());
+                intent.putExtra("pc7",currentCrypto.getPercent_change_7d());
+                intent.putExtra("pc24",currentCrypto.getPercent_change_24h());
+                intent.putExtra("marketcap",currentCrypto.getMarket_cap_usd());
+                context.startActivity(intent);
             }
         });
         }

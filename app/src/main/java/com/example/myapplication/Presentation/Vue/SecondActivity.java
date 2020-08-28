@@ -24,7 +24,6 @@ public class SecondActivity extends AppCompatActivity {
     private TextView pc7;
     private TextView pc24;
     private TextView marketcap;
-    private Intent intent;
 
 
     @Override
@@ -32,9 +31,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
-        intent = getIntent();
-        String cryptoJson = intent.getStringExtra("cryptoKey");
-        Crypto crypto = Singletons.getGson().fromJson(cryptoJson, Crypto.class);
+        Intent intent = getIntent();
 
         Name = findViewById(R.id.nom);
         Rang = findViewById(R.id.Rank);
@@ -47,24 +44,19 @@ public class SecondActivity extends AppCompatActivity {
         marketcap = findViewById(R.id.marketcap);
 
 
-        showDetail(crypto);
-    }
-
-
-    private void showDetail(Crypto crypto) {
-        Name.setText(crypto.getName());
-        Rang.setText(crypto.getRank() + "#");
-        symb.setText(crypto.getSymbol());
-        usd.setText(crypto.getPrice_usd() + "$");
-        btc.setText(crypto.getPrice_btc() + "BTC");
-        pc1.setText(crypto.getPercent_change_1h() + "%");
-        pc7.setText(crypto.getPercent_change_7d() + "%");
-        pc24.setText(crypto.getPercent_change_24h() + "%");
-        marketcap.setText(crypto.getMarket_cap_usd() + "$");
+        Name.setText(intent.getStringExtra("Name"));
+        Rang.setText(intent.getStringExtra("Rank") + "#");
+        symb.setText(intent.getStringExtra("symb"));
+        usd.setText("Prix en USD : " + intent.getStringExtra("usd") + "$");
+        btc.setText("Prix en BTC : " + intent.getStringExtra("btc") + "BTC");
+        pc1.setText("Taux d'échange 1H : "+ intent.getStringExtra("pc1") + "%");
+        pc7.setText("Taux d'échange 7j : " + intent.getStringExtra("pc7") + "%");
+        pc24.setText("Taux d'échange 24H : " + intent.getStringExtra("pc24") + "%");
+        marketcap.setText("Market Cap : " + intent.getStringExtra("marketcap") + "$");
 
 
     }
-
-
 }
+
+
 
